@@ -18,6 +18,16 @@ class Validator {
     if (str.length - end > 0) return str.length - end
     return 0
   }
+  static isValidChinese(str) {
+    var emailRule = /[^\u4E00-\u9FA5]/g
+    if (str.search(emailRule) != -1) return false
+    else return true
+  }
+  static isTwMobileNumber(str) {
+    var emailRule = /^09\d{2}-?\d{3}-?\d{3}$/
+    if (str.search(emailRule) != -1) return true
+    else return false
+  }
 }
 
 export default Validator
