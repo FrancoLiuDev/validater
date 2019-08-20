@@ -11,9 +11,11 @@ class Validator {
     else return false
   }
   static equalLength(str, lenth) {
+    if (!str) return -1
     return str.length - lenth
   }
   static equalLenRange(str, from, end) {
+    if (!str) return -1
     if (str.length - from < 0) return str.length - from
     if (str.length - end > 0) return str.length - end
     return 0
